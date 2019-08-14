@@ -15,13 +15,14 @@
  * @category    Magmodules
  * @package     Magmodules_Kiyohsnippets
  * @author      Magmodules <info@magmodules.eu)
- * @copyright   Copyright (c) 2015 (http://www.magmodules.eu)
+ * @copyright   Copyright (c) 2016 (http://www.magmodules.eu)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
 class Magmodules_Kiyohsnippets_Model_System_Config_Source_Kiyoh {
 
-	public function toOptionArray() {
+	public function toOptionArray() 
+	{
 		return array(
 			'www.kiyoh.nl'	=> Mage::helper('kiyohsnippets')->__('Kiyoh.nl'),
 			'www.kiyoh.com'	=> Mage::helper('kiyohsnippets')->__('Kiyoh.com'),

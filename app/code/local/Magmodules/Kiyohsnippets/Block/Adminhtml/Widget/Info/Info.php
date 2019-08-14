@@ -15,14 +15,20 @@
  * @category    Magmodules
  * @package     Magmodules_Kiyohsnippets
  * @author      Magmodules <info@magmodules.eu)
- * @copyright   Copyright (c) 2015 (http://www.magmodules.eu)
+ * @copyright   Copyright (c) 2016 (http://www.magmodules.eu)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
  
 class Magmodules_Kiyohsnippets_Block_Adminhtml_Widget_Info_Info extends Mage_Adminhtml_Block_Abstract implements Varien_Data_Form_Element_Renderer_Interface {
 
-    public function render(Varien_Data_Form_Element_Abstract $element) {
-         $html = '<div style="background:url(\'http://www.magmodules.eu/_logo.png\') no-repeat scroll 15px center #EAF0EE;border:1px solid #CCCCCC;margin-bottom:10px;padding:10px 5px 5px 200px;">
+    public function render(Varien_Data_Form_Element_Abstract $element) 
+    {
+
+        $magento_version = Mage::getVersion();
+        $module_version = Mage::getConfig()->getNode()->modules->Magmodules_Kiyohsnippets->version;
+		$logo_link = '//www.magmodules.eu/logo/kiyohsnippets/' . $module_version . '/' . $magento_version . '/logo.png';
+
+		$html = '<div style="background:url(\'' . $logo_link . '\') no-repeat scroll 15px center #EAF0EE;border:1px solid #CCCCCC;margin-bottom:10px;padding:10px 5px 5px 200px;">
 					<h4>About Magmodules.eu</h4>
 					<p>We are a Magento only E-commerce Agency located in the Netherlands.<br>
                     <br />

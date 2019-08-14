@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!-- 
+<?php
 /**
  * Magmodules.eu - http://www.magmodules.eu
  *
@@ -19,25 +18,12 @@
  * @copyright   Copyright (c) 2016 (http://www.magmodules.eu)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
- -->
-<config>
-    <acl>
-        <resources>
-            <admin>
-                <children>
-                    <system>
-                        <children>
-                            <config>
-                                <children>
-                                    <kiyohsnippets translate="title" module="kiyohsnippets">
-                                        <title>KiyOh Snippets</title>
-                                    </kiyohsnippets>
-                                </children>
-                            </config>
-                        </children>
-                    </system>
-                </children>
-            </admin>
-        </resources>
-    </acl>
-</config>
+ 
+class Magmodules_Kiyohsnippets_Block_Adminhtml_System_Config_Form_Field_Version extends Mage_Adminhtml_Block_System_Config_Form_Field {
+
+    public function _getElementHtml(Varien_Data_Form_Element_Abstract $element) 
+    {
+		return Mage::getConfig()->getNode()->modules->Magmodules_Kiyohsnippets->version;
+    }
+    
+}

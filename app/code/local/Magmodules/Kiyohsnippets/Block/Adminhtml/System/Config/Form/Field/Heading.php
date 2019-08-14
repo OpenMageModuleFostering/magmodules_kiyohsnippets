@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!-- 
+<?php
 /**
  * Magmodules.eu - http://www.magmodules.eu
  *
@@ -19,25 +18,15 @@
  * @copyright   Copyright (c) 2016 (http://www.magmodules.eu)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
- -->
-<config>
-    <acl>
-        <resources>
-            <admin>
-                <children>
-                    <system>
-                        <children>
-                            <config>
-                                <children>
-                                    <kiyohsnippets translate="title" module="kiyohsnippets">
-                                        <title>KiyOh Snippets</title>
-                                    </kiyohsnippets>
-                                </children>
-                            </config>
-                        </children>
-                    </system>
-                </children>
-            </admin>
-        </resources>
-    </acl>
-</config>
+
+class Magmodules_Kiyohsnippets_Block_Adminhtml_System_Config_Form_Field_Heading extends Mage_Adminhtml_Block_Abstract implements Varien_Data_Form_Element_Renderer_Interface {
+
+    public function render(Varien_Data_Form_Element_Abstract $element) 
+    {
+        $useContainerId = $element->getData('use_container_id');
+        return sprintf('<tr class="system-fieldset-sub-head" id="row_%s"><td colspan="5"><h4>%s</h4></td></tr>',
+            $element->getHtmlId(), $element->getLabel()
+        );
+    }
+    
+}

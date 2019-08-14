@@ -15,37 +15,41 @@
  * @category    Magmodules
  * @package     Magmodules_Kiyohsnippets
  * @author      Magmodules <info@magmodules.eu)
- * @copyright   Copyright (c) 2015 (http://www.magmodules.eu)
+ * @copyright   Copyright (c) 2016 (http://www.magmodules.eu)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
  
 class Magmodules_Kiyohsnippets_Block_Snippets extends Mage_Core_Block_Template {
 
-    protected function _construct() {
-
+    protected function _construct() 
+    {
 		parent::_construct();
-
 		$this->addData(array(
-            'cache_lifetime'    => 7200,
-            'cache_tags'        => array(Mage_Cms_Model_Block::CACHE_TAG, 'kiyohsnippets_block'),
-            'cache_key'         => 'kiyohsnippets-snippets-block',                   
-        ));
-
+			'cache_lifetime' => 7200,
+			'cache_tags' => array(Mage_Cms_Model_Block::CACHE_TAG, 'kiyohsnippets_block'),
+			'cache_key' => 'kiyohsnippets-snippets-block',                   
+		));
 		if(Mage::getStoreConfig('kiyohsnippets/api/enabled')) {
-			$this->setTemplate('magmodules/kiyohsnippets/block.phtml');
+			$snippets = $this->helper('kiyohsnippets')->getSnapshopRequest(); 
+			if($snippets) {			
+				$this->setSnippets($snippets);
+				$this->setTemplate('magmodules/kiyohsnippets/block.phtml');			
+			}	
 		}
-		
     }
     
-	public function getSnapshopRequest() {
+	public function getSnapshopRequest() 
+	{
 		 return $this->helper('kiyohsnippets')->getSnapshopRequest();
     }	
 
-	public function getKiyohLink() {
+	public function getKiyohLink() 
+	{
 		 return $this->helper('kiyohsnippets')->getKiyohLink();
     }	
 
-	public function getKiyohStars($rating) {
+	public function getKiyohStars($rating) 
+	{
 		 return $this->helper('kiyohsnippets')->getKiyohStars($rating);
     }	    
 

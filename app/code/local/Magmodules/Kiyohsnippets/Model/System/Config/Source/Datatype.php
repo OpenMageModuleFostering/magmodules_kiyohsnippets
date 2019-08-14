@@ -1,8 +1,6 @@
-<?xml version="1.0"?>
-<!-- 
+<?php 
 /**
- * Magmodules.eu
- * http://www.magmodules.eu
+ * Magmodules.eu - http://www.magmodules.eu
  *
  * NOTICE OF LICENSE
  *
@@ -15,16 +13,20 @@
  * to info@magmodules.eu so we can send you a copy immediately.
  *
  * @category    Magmodules
- * @package     Magmodules_Core
+ * @package     Magmodules_Kiyohsnippets
  * @author      Magmodules <info@magmodules.eu)
- * @copyright   Copyright (c) 2014 (http://www.magmodules.eu)
+ * @copyright   Copyright (c) 2016 (http://www.magmodules.eu)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
- -->
-<layout>
-    <default>
-        <reference name="head">
-            <action method="addCss"><name>magmodules/core/css/style.css</name></action>
-        </reference>
-    </default>
-</layout>
+
+class Magmodules_Kiyohsnippets_Model_System_Config_Source_Datatype {
+
+	public function toOptionArray() 
+	{
+		return array(
+			'' => Mage::helper('kiyohsnippets')->__('Score'),
+			'recommended' => Mage::helper('kiyohsnippets')->__('Recommended'),
+		);
+	}
+
+}

@@ -2,7 +2,7 @@
 <layout version="0.1.0">
 	<default>
 		<reference name="head">
-			<action method="addCss"><stylesheet>magmodules/kiyohsnippets/style.css</stylesheet></action>
+			<action method="addCss" ifconfig="kiyohsnippets/api/enabled"><stylesheet>magmodules/kiyohsnippets/style.css</stylesheet></action>
 		</reference>
 	</default>
 </layout> 

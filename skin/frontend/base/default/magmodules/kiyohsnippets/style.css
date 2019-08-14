@@ -18,12 +18,25 @@
  * @copyright   Copyright (c) 2014 (http://www.magmodules.eu)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
- 
 .kiyoh-shop-snippets {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 
 .kiyoh-shop-snippets .rating-box {
-	float: left;
-	margin: 3px 5px 0px 0px;
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+.rating {
+    display: block;
+    background: url(./images/5-stars-full.png) no-repeat;
+    background-size: 100px;
+    height: 50px;
+}
+
+.rating-box {
+    width: 100px;
+    background: url(./images/5-stars-empty.png) no-repeat;
+    margin: 5px auto;
+    background-size: 100px;
 }
