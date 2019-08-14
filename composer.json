@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Magmodules_Kiyohsnippets",
+    "type": "magento-module",
+    "license": "Single-Server-License",
+    "homepage": "",
+    "description": "Add Kiyoh rich snippets to Magento Homepage",
+    "authors": [
+    {
+        "name": "Magmodules",
+        "email": "info@magmodules.nl"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
